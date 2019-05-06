@@ -1,4 +1,4 @@
-package tiendavirtual.tienda_completa_v11.org.pl.eshopping.dto;
+package tiendavirtual.tienda_completa_v12.org.pl.eshopping.dto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import tiendavirtual.tienda_completa_v11.org.pl.eshopping.bd.Conexion;
+import tiendavirtual.tienda_completa_v12.org.pl.eshopping.bd.Conexion;
 /*** added by dCategoriaDAO* modified by dAgregarCategoria* modified by
 dModificarCategoria* modified by dEliminarCategoria* modified by
 dListarCategorias

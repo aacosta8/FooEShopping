@@ -1,0 +1,36 @@
+delta dListarCategorias {
+	modifies org.pl.eshopping.fop.AdminCategoria{
+		adds public List<Categoria> listar(String n, String d) throws Exception {
+			return catDAO.listar();
+		}
+	}
+	
+	modifies org.pl.eshopping.dto.CategoriaDAO{
+		adds public List<Categoria> listar(){
+			List<Categoria> resultado = new ArrayList<Categoria>();
+			try {
+				conn = Conexion.getConexion();
+				String query = "SELECT id, nombre, descripcion FROM categoria";
+				ps = conn.prepareStatement(query);
+				ResultSet registros = ps.executeQuery();
+			 	while(registros.next()){
+			 		Categoria c = new Categoria();
+			 		c.setId(registros.getInt(1));
+			 		c.setNombre(registros.getString(2));
+			 		c.setDescripcion(registros.getString(3));
+			 		
+			 		resultado.add(c);
+			 	}
+			}
+			catch(Exception e){ 
+				e.printStackTrace();
+			}
+			finally{
+				try { 
+					conn.close();
+				} catch (Exception e) { /* ignored */ }
+			}
+			return resultado;	
+		}
+	}
+}

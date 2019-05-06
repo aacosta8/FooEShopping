@@ -1,9 +1,9 @@
-package tiendavirtual.tienda_completa_v11.org.pl.eshopping.fop;
+package tiendavirtual.tienda_completa_v12.org.pl.eshopping.fop;
 
 import java.util.ArrayList;
 import java.util.List;
-import tiendavirtual.tienda_completa_v11.org.pl.eshopping.dto.Categoria;
-import tiendavirtual.tienda_completa_v11.org.pl.eshopping.dto.CategoriaDAO;
+import tiendavirtual.tienda_completa_v12.org.pl.eshopping.dto.Categoria;
+import tiendavirtual.tienda_completa_v12.org.pl.eshopping.dto.CategoriaDAO;
 /*** added by dAdminCategorias* modified by dAgregarCategoria* modified by
 dModificarCategoria* modified by dEliminarCategoria* modified by
 dListarCategorias

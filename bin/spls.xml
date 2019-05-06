@@ -6,12 +6,15 @@
 			<feature name ="AgregarCategoria" />
 			<feature name ="ModificarCategoria" />
 			<feature name ="EliminarCategoria" />
+			<feature name ="ListarCategorias" />
 			<feature name ="Categoria" />
 			<feature name ="CategoriaDAO" />
 			<feature name ="Conexion" />
 			<feature name ="ConexionAntigua" />
+			<feature name ="ConexionNueva" />
 			<feature name ="Config" />
 			<feature name ="ConfigAntigua" />
+			<feature name ="ConfigNueva" />
 			<feature name ="CategoriaTest" />
 			<feature name ="TestearIdCategoria" />
 			<feature name ="TestearNombreCategoria" />
@@ -48,6 +51,14 @@
 				" />
 			</partition>
 			<partition>
+				<modul delta="dAdminCategorias" when="ListarCategorias
+				" />
+				<modul delta="dCategoriaDAO" when="ListarCategorias
+				" />
+				<modul delta="dListarCategorias" when="ListarCategorias
+				" />
+			</partition>
+			<partition>
 				<modul delta="dCategoria" when="Categoria
 				" />
 			</partition>
@@ -64,11 +75,19 @@
 				" />
 			</partition>
 			<partition>
+				<modul delta="dConexionNueva" when="ConexionNueva
+				" />
+			</partition>
+			<partition>
 				<modul delta="dConfig" when="Config
 				" />
 			</partition>
 			<partition>
 				<modul delta="dConfigAntigua" when="ConfigAntigua
+				" />
+			</partition>
+			<partition>
+				<modul delta="dConfigNueva" when="ConfigNueva
 				" />
 			</partition>
 			<partition>

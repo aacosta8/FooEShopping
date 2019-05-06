@@ -1,0 +1,11 @@
+delta dConfigNueva {
+		adds {
+		package org.pl.eshopping.general;
+		
+		public class Config {
+			public static final String SERVIDOR = "jdbc:postgresql://127.0.0.1:5432/tienda";
+			public static final String NOMBRE_USUARIO = "alex";
+			public static final String CONTRASENA_USUARIO = "32205045";
+		}
+	}
+}

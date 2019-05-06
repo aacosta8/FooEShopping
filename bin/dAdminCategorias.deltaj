@@ -2,6 +2,8 @@ delta dAdminCategorias {
 	adds{
 		package org.pl.eshopping.fop;
 		
+		import java.util.ArrayList;
+		import java.util.List;
 		import org.pl.eshopping.dto.Categoria;
 		import org.pl.eshopping.dto.CategoriaDAO;
 		

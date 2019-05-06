@@ -1,11 +1,11 @@
 SPL TiendaVirtual {
 
-	Features = {AdminCategorias, AgregarCategoria, ModificarCategoria, EliminarCategoria, Categoria, 
-		CategoriaDAO, Conexion, ConexionAntigua, Config, ConfigAntigua, CategoriaTest, TestearIdCategoria, TestearNombreCategoria
+	Features = {AdminCategorias, AgregarCategoria, ModificarCategoria, EliminarCategoria, ListarCategorias, Categoria, 
+		CategoriaDAO, Conexion, ConexionAntigua, ConexionNueva, Config, ConfigAntigua, ConfigNueva, CategoriaTest, TestearIdCategoria, TestearNombreCategoria
 	}
 
-	Deltas = {dAdminCategorias, dAgregarCategoria, dModificarCategoria, dEliminarCategoria, dCategoria,
-		dCategoriaDAO, dConexion, dConexionAntigua, dConfig, dConfigAntigua, dCategoriaTest, dTestearIdCategoria, dTestearNombreCategoria
+	Deltas = {dAdminCategorias, dAgregarCategoria, dModificarCategoria, dEliminarCategoria, dListarCategorias, dCategoria,
+		dCategoriaDAO, dConexion, dConexionAntigua, dConexionNueva, dConfig, dConfigAntigua, dConfigNueva, dCategoriaTest, dTestearIdCategoria, dTestearNombreCategoria
 	}
 
 	Constraints {
@@ -16,18 +16,22 @@ SPL TiendaVirtual {
 		{dAdminCategorias, dCategoriaDAO, dAgregarCategoria} when (AgregarCategoria);
 		{dAdminCategorias, dCategoriaDAO, dModificarCategoria} when (ModificarCategoria);
 		{dAdminCategorias, dCategoriaDAO, dEliminarCategoria} when (EliminarCategoria);
+		{dAdminCategorias, dCategoriaDAO, dListarCategorias} when (ListarCategorias);
 		{dCategoria} when (Categoria);
 		{dCategoriaDAO} when (CategoriaDAO);
 		{dConexion} when (Conexion);
 		{dConexionAntigua} when (ConexionAntigua);
+		{dConexionNueva} when (ConexionNueva);
 		{dConfig} when (Config);
 		{dConfigAntigua} when (ConfigAntigua);
+		{dConfigNueva} when (ConfigNueva);
 		{dCategoriaTest, dTestearIdCategoria, dTestearNombreCategoria} when (CategoriaTest);
 	}
 
 	Products {
-		tienda_completa_v10 = {AdminCategorias, AgregarCategoria, ModificarCategoria, EliminarCategoria, Categoria, CategoriaDAO, ConexionAntigua, ConfigAntigua};
-		tienda_completa_v11 = {AdminCategorias, AgregarCategoria, ModificarCategoria, EliminarCategoria, Categoria, CategoriaDAO, Conexion, Config, CategoriaTest, TestearIdCategoria, TestearIdCategoria};
-		tienda_minima_v11 = {AgregarCategoria, ModificarCategoria, EliminarCategoria, Categoria, Conexion, Config}; 
+		tienda_completa_v10 = {AdminCategorias, AgregarCategoria, ModificarCategoria, EliminarCategoria, ListarCategorias, Categoria, CategoriaDAO, ConexionAntigua, ConfigAntigua};
+		tienda_completa_v11 = {AdminCategorias, AgregarCategoria, ModificarCategoria, EliminarCategoria, ListarCategorias, Categoria, CategoriaDAO, Conexion, Config, CategoriaTest, TestearIdCategoria, TestearIdCategoria};
+		tienda_minima_v11 = {AgregarCategoria, ModificarCategoria, EliminarCategoria, ListarCategorias, Categoria, Conexion, Config}; 
+		tienda_completa_v12 = {AdminCategorias, AgregarCategoria, ModificarCategoria, EliminarCategoria, ListarCategorias, Categoria, CategoriaDAO, ConexionNueva, ConfigNueva, CategoriaTest, TestearIdCategoria, TestearIdCategoria};
 	}
 }
