@@ -1,0 +1,41 @@
+delta dTestearNombreCategoria {
+	modifies org.pl.eshopping.fop.test.CategoriaTest{
+		adds @Test(expected = IllegalArgumentException.class)
+	    public void SetNombre_EmptyStringAsParam_ExceptionThrown() throws Exception {
+	        System.out.println("setNombre");
+	        String nombre = "";
+	        Categoria instance = new Categoria();
+	        instance.setNombre(nombre);
+	    }
+	}
+	
+	modifies org.pl.eshopping.fop.test.CategoriaTest{
+		adds @Test(expected = IllegalArgumentException.class)
+	    public void SetNombre_NullStringAsParam_ExceptionThrown() throws Exception {
+	        System.out.println("setNombre");
+	        String nombre = null;
+	        Categoria instance = new Categoria();
+	        instance.setNombre(nombre);
+	    }
+	}
+	
+	modifies org.pl.eshopping.fop.test.CategoriaTest{
+		adds @Test(expected = IllegalArgumentException.class)
+	    public void SetNombre_StringWithLessThan3LetterAsParam_ExceptionThrown() throws Exception {
+	        System.out.println("setNombre");
+	        String nombre = "Al";
+	        Categoria instance = new Categoria();
+	        instance.setNombre(nombre);
+	    }
+	}
+	
+	modifies org.pl.eshopping.fop.test.CategoriaTest{
+		adds @Test
+	    public void GetNombre_NewInstanceOfCategory_EmptyName(){
+	        System.out.println("getNombre");
+	        Categoria instance = new Categoria();
+	        String nombre = instance.getNombre();
+	        assertSame("", nombre);
+	    }
+	}
+}

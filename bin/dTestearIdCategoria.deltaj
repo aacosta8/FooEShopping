@@ -1,0 +1,21 @@
+delta dTestearIdCategoria {
+	modifies org.pl.eshopping.fop.test.CategoriaTest{
+		adds @Test(expected = IllegalArgumentException.class)
+    	public void SetId_NegativeNumberAsParam_ExceptionThrown() throws Exception {
+	        System.out.println("setId");
+	        Integer id = -1;
+	        Categoria instance = new Categoria();
+	        instance.setId(id);        
+    	}
+	}
+	
+	modifies org.pl.eshopping.fop.test.CategoriaTest{
+		adds @Test(expected = IllegalArgumentException.class)
+	    public void SetId_NullNumberAsParam_ExceptionThrown() throws Exception {
+	        System.out.println("setId");
+	        Integer id = null;
+	        Categoria instance = new Categoria();
+	        instance.setId(id);        
+	    }
+	}
+}
